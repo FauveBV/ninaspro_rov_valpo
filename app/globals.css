@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #c8447f;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .animate-floaty,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}

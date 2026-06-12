@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Logo from "@/components/Logo";
 import Bubbles from "@/components/Bubbles";
+import ThemeToggle from "@/components/ThemeToggle";
 import { site, socials, logros, contenidos, metodologia } from "@/lib/course";
 import { socialPaths } from "@/lib/icons";
 
@@ -9,35 +10,39 @@ export default function Page() {
     <>
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-rose focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-rose focus:px-4 focus:py-2 focus:text-ondark"
       >
         Saltar al contenido
       </a>
 
       {/* NAV */}
-      <header className="sticky top-0 z-40 border-b border-violet/10 bg-cream/85 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-line bg-page/85 backdrop-blur">
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5" aria-label="Principal">
-          <a href="#top" aria-label={`${site.org} — inicio`}>
-            <Logo variant="color" />
+          <a href="#top" aria-label={`${site.org} — inicio`} className="flex items-center">
+            <img src="/logo-violet.png" alt="Niñas Pro" className="logo-light h-9 w-auto" />
+            <img src="/logo-white.png" alt="Niñas Pro" className="logo-dark h-9 w-auto" />
           </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-ink/80 md:flex">
+          <div className="hidden items-center gap-7 text-sm font-medium text-muted/80 md:flex">
             <a href="#taller" className="transition hover:text-rose">El taller</a>
             <a href="#aprendes" className="transition hover:text-rose">Qué aprendes</a>
             <a href="#logistica" className="transition hover:text-rose">Cuándo y dónde</a>
             <a href="#ninaspro" className="transition hover:text-rose">Niñas Pro</a>
           </div>
-          <a
-            href="#inscripcion"
-            className="inline-flex items-center rounded-full bg-rose px-5 py-2.5 text-sm font-medium text-white transition hover:bg-rose-dark"
-          >
-            Inscríbete
-          </a>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a
+              href="#inscripcion"
+              className="inline-flex items-center rounded-full bg-rose px-5 py-2.5 text-sm font-medium text-ondark transition hover:bg-rose-dark"
+            >
+              Inscríbete
+            </a>
+          </div>
         </nav>
       </header>
 
       <main id="top">
         {/* HERO */}
-        <section className="relative overflow-hidden bg-violet-deep text-white" aria-labelledby="hero-title">
+        <section className="relative overflow-hidden bg-violet-deep text-ondark" aria-labelledby="hero-title">
           <img
             src="/hero-rov-color.png"
             alt=""
@@ -57,35 +62,35 @@ export default function Page() {
                 <br />
                 <span className="text-rose-100">robótica submarina</span>
               </h1>
-              <p className="mt-5 max-w-md text-lg text-white/85">
+              <p className="mt-5 max-w-md text-lg text-ondark/85">
                 Construye y programa tu propio ROV y enfréntate a desafíos inspirados en la competencia
-                internacional <strong className="font-medium text-white">MATE ROV</strong>. Para adolescentes con
+                internacional <strong className="font-medium text-ondark">MATE ROV</strong>. Para adolescentes con
                 curiosidad por la tecnología. Sin experiencia previa.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#inscripcion"
-                  className="inline-flex items-center rounded-full bg-rose px-7 py-3.5 font-medium text-white transition hover:bg-rose-dark"
+                  className="inline-flex items-center rounded-full bg-rose px-7 py-3.5 font-medium text-ondark transition hover:bg-rose-dark"
                 >
                   Quiero inscribirme
                 </a>
                 <a
                   href="#taller"
-                  className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-medium text-white transition hover:bg-white/20"
+                  className="inline-flex items-center rounded-full border border-overlay/30 bg-overlay/10 px-7 py-3.5 font-medium text-ondark transition hover:bg-overlay/20"
                 >
                   Conoce el taller
                 </a>
               </div>
               <dl className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-                <div><dt className="text-white/60">Modalidad</dt><dd className="font-medium">{site.modalidad}</dd></div>
-                <div><dt className="text-white/60">Duración</dt><dd className="font-medium">{site.duracion}</dd></div>
-                <div><dt className="text-white/60">Dirigido a</dt><dd className="font-medium">{site.dirigidoA}</dd></div>
-                <div><dt className="text-white/60">Valor</dt><dd className="font-medium text-rose-100">{site.valor}</dd></div>
+                <div><dt className="text-ondark/60">Modalidad</dt><dd className="font-medium">{site.modalidad}</dd></div>
+                <div><dt className="text-ondark/60">Duración</dt><dd className="font-medium">{site.duracion}</dd></div>
+                <div><dt className="text-ondark/60">Dirigido a</dt><dd className="font-medium">{site.dirigidoA}</dd></div>
+                <div><dt className="text-ondark/60">Valor</dt><dd className="font-medium text-rose-100">{site.valor}</dd></div>
               </dl>
             </div>
 
             <div className="relative">
-              <div className="animate-floaty overflow-hidden rounded-xl2 shadow-2xl ring-1 ring-white/20">
+              <div className="animate-floaty overflow-hidden rounded-xl2 shadow-2xl ring-1 ring-overlay/20">
                 <img
                   src="/hero-rov-color.png"
                   alt="Ilustración de robots submarinos ROV navegando entre aros bajo el agua, junto a una estación submarina y arrecifes de coral."
@@ -104,11 +109,11 @@ export default function Page() {
             {site.courseTitle}
           </h2>
           <div className="mt-8 grid items-start gap-10 md:grid-cols-[1.4fr_1fr]">
-            <div className="space-y-5 text-lg leading-relaxed text-ink/80">
+            <div className="space-y-5 text-lg leading-relaxed text-muted/80">
               <p>
                 La robótica tiene cada vez más protagonismo en desafíos científicos, industriales y medioambientales.
                 En este taller, niñas y adolescentes se acercan al desarrollo de{" "}
-                <strong className="font-medium text-ink">sistemas robóticos submarinos</strong> a través de una
+                <strong className="font-medium text-body">sistemas robóticos submarinos</strong> a través de una
                 experiencia práctica y progresiva: exploran el movimiento, el control y la percepción robótica en
                 entornos simulados, y desarrollan habilidades técnicas y creativas.
               </p>
@@ -118,7 +123,7 @@ export default function Page() {
                   href={site.links.mateRov}
                   target="_blank"
                   rel="noopener"
-                  className="text-magenta-deep underline decoration-2 underline-offset-2 hover:text-rose"
+                  className="text-link underline decoration-2 underline-offset-2 hover:text-rose"
                 >
                   MATE ROV Competition
                 </a>
@@ -127,9 +132,9 @@ export default function Page() {
                 físico.
               </p>
             </div>
-            <aside className="rounded-xl2 bg-lila p-6 md:p-7">
-              <h3 className="text-lg font-medium text-violet-deep">Lo que vas a lograr</h3>
-              <ul className="mt-4 space-y-3 text-ink/80">
+            <aside className="rounded-xl2 bg-surface2 p-6 md:p-7">
+              <h3 className="text-lg font-medium text-body">Lo que vas a lograr</h3>
+              <ul className="mt-4 space-y-3 text-muted/80">
                 {logros.map((l) => (
                   <li key={l} className="flex gap-3">
                     <span className="font-bold text-rose">→</span> {l}
@@ -141,17 +146,17 @@ export default function Page() {
         </section>
 
         {/* QUÉ APRENDES */}
-        <section id="aprendes" className="border-y border-violet/10 bg-white py-20 md:py-24" aria-labelledby="aprendes-title">
+        <section id="aprendes" className="border-y border-line bg-surface py-20 md:py-24" aria-labelledby="aprendes-title">
           <div className="mx-auto max-w-6xl px-5">
             <p className="text-sm font-medium uppercase tracking-wide text-rose">Contenidos</p>
             <h2 id="aprendes-title" className="mt-2 text-3xl font-bold md:text-4xl">Qué vas a aprender</h2>
-            <p className="mt-3 max-w-2xl text-lg text-ink/70">
+            <p className="mt-3 max-w-2xl text-lg text-muted/70">
               Cada bloque combina conceptos breves y aplicación inmediata. Avanzas por desafíos, desde el control
               básico hasta misiones integradas.
             </p>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {contenidos.map((c, i) => (
-                <article key={c.n} className="rounded-xl2 border border-violet/15 p-6 transition hover:border-rose/50">
+                <article key={c.n} className="rounded-xl2 border border-line p-6 transition hover:border-rose/50">
                   <div
                     className={`grid h-11 w-11 place-items-center rounded-xl font-bold ${
                       i % 2 === 0 ? "bg-rose-100 text-rose-dark" : "bg-lila text-violet"
@@ -160,7 +165,7 @@ export default function Page() {
                     {c.n}
                   </div>
                   <h3 className="mt-4 text-lg font-medium">{c.titulo}</h3>
-                  <p className="mt-2 text-ink/70">{c.texto}</p>
+                  <p className="mt-2 text-muted/70">{c.texto}</p>
                 </article>
               ))}
             </div>
@@ -175,36 +180,36 @@ export default function Page() {
             {metodologia.map((m) => (
               <div key={m.titulo} className="space-y-2">
                 <p className="text-2xl font-bold text-violet">{m.titulo}</p>
-                <p className="text-ink/70">{m.texto}</p>
+                <p className="text-muted/70">{m.texto}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* LOGÍSTICA */}
-        <section id="logistica" className="bg-violet-deep py-20 text-white md:py-24" aria-labelledby="log-title">
+        <section id="logistica" className="bg-violet-deep py-20 text-ondark md:py-24" aria-labelledby="log-title">
           <div className="mx-auto max-w-6xl px-5">
             <p className="text-sm font-medium uppercase tracking-wide text-rose-100">Cuándo y dónde</p>
             <h2 id="log-title" className="mt-2 text-3xl font-bold md:text-4xl">Datos prácticos</h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl2 border border-white/10 bg-white/5 p-6">
-                <p className="text-sm text-white/60">Días y horario</p>
+              <div className="rounded-xl2 border border-overlay/10 bg-overlay/5 p-6">
+                <p className="text-sm text-ondark/60">Días y horario</p>
                 <p className="mt-1 text-xl font-medium">{site.diasHorario}</p>
               </div>
-              <div className="rounded-xl2 border border-white/10 bg-white/5 p-6">
-                <p className="text-sm text-white/60">Lugar</p>
+              <div className="rounded-xl2 border border-overlay/10 bg-overlay/5 p-6">
+                <p className="text-sm text-ondark/60">Lugar</p>
                 <p className="mt-1 text-xl font-medium">{site.lugar}</p>
               </div>
-              <div className="rounded-xl2 border border-white/10 bg-white/5 p-6">
-                <p className="text-sm text-white/60">Inicio del taller</p>
+              <div className="rounded-xl2 border border-overlay/10 bg-overlay/5 p-6">
+                <p className="text-sm text-ondark/60">Inicio del taller</p>
                 <p className="mt-1 text-xl font-medium">{site.inicioTaller}</p>
               </div>
-              <div className="rounded-xl2 border border-white/10 bg-white/5 p-6">
-                <p className="text-sm text-white/60">Valor</p>
+              <div className="rounded-xl2 border border-overlay/10 bg-overlay/5 p-6">
+                <p className="text-sm text-ondark/60">Valor</p>
                 <p className="mt-1 text-xl font-medium text-rose-100">{site.valor}</p>
               </div>
             </div>
-            <p className="mt-8 max-w-2xl text-white/70">
+            <p className="mt-8 max-w-2xl text-ondark/70">
               Dirigido a adolescentes mujeres de enseñanza media con curiosidad por la tecnología. No se requiere
               experiencia previa en robótica; ayuda haber tenido un primer acercamiento a la programación en Python,
               pero no es obligatorio.
@@ -214,9 +219,9 @@ export default function Page() {
 
         {/* INSCRIPCIÓN */}
         <section id="inscripcion" className="mx-auto max-w-6xl px-5 py-20 md:py-24" aria-labelledby="insc-title">
-          <div className="rounded-xl2 bg-rose-100 p-8 text-center md:p-12">
-            <h2 id="insc-title" className="text-3xl font-bold text-ink md:text-4xl">Postula al taller</h2>
-            <p className="mx-auto mt-3 max-w-xl text-lg text-ink/75">
+          <div className="rounded-xl2 bg-accentSoft p-8 text-center md:p-12">
+            <h2 id="insc-title" className="text-3xl font-bold text-body md:text-4xl">Postula al taller</h2>
+            <p className="mx-auto mt-3 max-w-xl text-lg text-muted/75">
               Inscripciones abiertas del{" "}
               <strong className="text-rose-dark">{site.inicioInscripciones}</strong> al{" "}
               <strong className="text-rose-dark">{site.cierreInscripciones}</strong>. Cupos limitados.
@@ -227,7 +232,7 @@ export default function Page() {
                   href={site.links.formulario}
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center rounded-full bg-rose px-8 py-4 font-medium text-white transition hover:bg-rose-dark"
+                  className="inline-flex items-center rounded-full bg-rose px-8 py-4 font-medium text-ondark transition hover:bg-rose-dark"
                 >
                   Ir al formulario de inscripción
                 </a>
@@ -236,7 +241,7 @@ export default function Page() {
                   type="button"
                   disabled
                   aria-disabled="true"
-                  className="inline-flex cursor-not-allowed items-center rounded-full bg-rose/60 px-8 py-4 font-medium text-white/90"
+                  className="inline-flex cursor-not-allowed items-center rounded-full bg-rose/60 px-8 py-4 font-medium text-ondark/90"
                 >
                   Inscripciones desde el {site.inicioInscripciones}
                 </button>
@@ -245,7 +250,7 @@ export default function Page() {
                 href={site.links.linktree}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center rounded-full border border-violet/20 bg-white px-8 py-4 font-medium text-ink transition hover:bg-cream"
+                className="inline-flex items-center rounded-full border border-line bg-surface px-8 py-4 font-medium text-body transition hover:bg-page"
               >
                 Síguenos en redes
               </a>
@@ -254,19 +259,19 @@ export default function Page() {
         </section>
 
         {/* NIÑAS PRO */}
-        <section id="ninaspro" className="border-t border-violet/10 bg-white py-20 md:py-24" aria-labelledby="np-title">
+        <section id="ninaspro" className="border-t border-line bg-surface py-20 md:py-24" aria-labelledby="np-title">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2">
             <div>
               <p className="text-sm font-medium uppercase tracking-wide text-rose">Quiénes somos</p>
               <h2 id="np-title" className="mt-2 text-3xl font-bold md:text-4xl">¿Qué es Niñas Pro?</h2>
-              <p className="mt-5 text-lg leading-relaxed text-ink/80">
+              <p className="mt-5 text-lg leading-relaxed text-muted/80">
                 Niñas Pro es una organización chilena que{" "}
-                <strong className="font-medium text-ink">empodera a niñas y adolescentes a través de la enseñanza de
+                <strong className="font-medium text-body">empodera a niñas y adolescentes a través de la enseñanza de
                 la programación</strong>{" "}
                 e inspira vocaciones científicas y tecnológicas. Trabajamos para eliminar las barreras de acceso a la
                 tecnología, con cursos y actividades en formato presencial y virtual.
               </p>
-              <blockquote className="mt-6 border-l-4 border-rose pl-5 italic text-ink/80">
+              <blockquote className="mt-6 border-l-4 border-rose pl-5 italic text-muted/80">
                 Queremos que las niñas tengan la oportunidad de aprender computación y se vuelvan{" "}
                 <span className="font-medium not-italic text-violet">creadoras</span>, no solo consumidoras de
                 tecnología.
@@ -274,8 +279,8 @@ export default function Page() {
             </div>
             {/* SLOT FOTO GRUPAL — reemplaza por una foto real de participantes/mentoras.
                 Ver specs de la imagen en README.md. Sugerido: /ninaspro-grupo.jpg */}
-            <figure className="overflow-hidden rounded-xl2 ring-1 ring-violet/15">
-              <div className="flex aspect-[4/3] w-full flex-col items-center justify-center bg-lila text-center text-ink/55">
+            <figure className="overflow-hidden rounded-xl2 ring-1 ring-line">
+              <div className="flex aspect-[4/3] w-full flex-col items-center justify-center bg-surface2 text-center text-muted/55">
                 <span className="text-sm font-medium uppercase tracking-wide text-violet">Foto grupal</span>
                 <span className="mt-1 max-w-[16rem] px-4 text-sm">
                   Reemplaza por una imagen real de niñas y mentoras (ver specs en el README).
@@ -288,7 +293,7 @@ export default function Page() {
       </main>
 
       {/* FOOTER ANIMADO */}
-      <footer className="relative overflow-hidden bg-violet-deep text-white">
+      <footer className="relative overflow-hidden bg-violet-deep text-ondark">
         <img
           src="/hero-rov.svg"
           alt=""
@@ -302,7 +307,7 @@ export default function Page() {
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div>
               <Logo variant="white" className="h-8 w-auto" />
-              <p className="mt-3 max-w-sm text-white/70">
+              <p className="mt-3 max-w-sm text-ondark/70">
                 Robótica submarina para que más niñas y adolescentes se proyecten en áreas STEM.
               </p>
             </div>
@@ -316,7 +321,7 @@ export default function Page() {
                     target="_blank"
                     rel="noopener"
                     aria-label={s.name}
-                    className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-rose"
+                    className="grid h-10 w-10 place-items-center rounded-full bg-overlay/10 text-ondark transition hover:bg-rose"
                   >
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
                       <path d={socialPaths[s.name]} />
@@ -325,7 +330,7 @@ export default function Page() {
                 ))}
             </nav>
           </div>
-          <p className="relative mt-12 border-t border-white/10 pt-6 text-sm text-white/50">
+          <p className="relative mt-12 border-t border-overlay/10 pt-6 text-sm text-ondark/50">
             © 2026 Niñas Pro · Taller {site.courseTitle}
           </p>
         </div>

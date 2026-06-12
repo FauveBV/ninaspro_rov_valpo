@@ -2,15 +2,29 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        // Marca (constantes en ambos modos)
         ink: "#2B1C44",
         violet: { DEFAULT: "#7A4FC0", soft: "#AFA9EC", deep: "#3A2566" },
         rose: { DEFAULT: "#C8447F", dark: "#A8336A", 100: "#F7D9E6", 50: "#FBF2F7" },
         magenta: { DEFAULT: "#A8336A", deep: "#8E2FA8" },
         lila: "#F2ECFA",
         cream: "#FBF2F7",
+        // Blanco semántico (secciones oscuras, constante)
+        ondark: "#FFFFFF",
+        overlay: "#FFFFFF",
+        // Semánticos que cambian con el tema (light/dark) vía variables CSS
+        page: "rgb(var(--c-page) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        surface2: "rgb(var(--c-surface2) / <alpha-value>)",
+        accentSoft: "rgb(var(--c-accent-soft) / <alpha-value>)",
+        body: "rgb(var(--c-body) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        link: "rgb(var(--c-link) / <alpha-value>)",
       },
       fontFamily: {
         // Space Grotesk = tipografía de marca, inyectada como variable por next/font

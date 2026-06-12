@@ -2,13 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --c-page: 251 242 247;
+  --c-surface: 255 255 255;
+  --c-surface2: 242 236 250;
+  --c-accent-soft: 247 217 230;
+  --c-body: 43 28 68;
+  --c-muted: 90 74 120;
+  --c-line: 226 215 242;
+  --c-link: 142 47 168;
+}
+
+.dark {
+  --c-page: 22 12 54;
+  --c-surface: 38 24 86;
+  --c-surface2: 48 30 100;
+  --c-accent-soft: 58 37 102;
+  --c-body: 243 238 250;
+  --c-muted: 201 190 230;
+  --c-line: 64 50 110;
+  --c-link: 233 160 220;
+}
+
+/* Iconos del toggle y logo adaptativo */
+.icon-sun { display: none; }
+.dark .icon-sun { display: block; }
+.dark .icon-moon { display: none; }
+.logo-dark { display: none; }
+.dark .logo-dark { display: block; }
+.dark .logo-light { display: none; }
+
 html {
   scroll-behavior: smooth;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #c8447f;
+  outline: 3px solid theme("colors.rose.DEFAULT");
   outline-offset: 3px;
   border-radius: 6px;
 }

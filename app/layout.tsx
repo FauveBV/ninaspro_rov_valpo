@@ -24,8 +24,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={spaceGrotesk.variable}>
-      <body className="bg-cream font-sans text-ink antialiased">{children}</body>
+    <html lang="es" className={spaceGrotesk.variable} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){}})();",
+          }}
+        />
+      </head>
+      <body className="bg-page font-sans text-body antialiased">{children}</body>
     </html>
   );
 }

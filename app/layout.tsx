@@ -12,11 +12,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Robótica ROV · Niñas Pro",
   description:
-    "Taller gratuito y presencial de robótica submarina para adolescentes. Construye y programa tu propio ROV inspirado en la competencia internacional MATE ROV.",
+    "Taller gratuito y presencial de robótica acuática para adolescentes. Construye y programa tu propio ROV inspirado en la competencia internacional MATE ROV.",
   openGraph: {
     title: "Robótica para Competencias ROV · Niñas Pro",
     description:
-      "Taller gratuito y presencial de robótica submarina para adolescentes de enseñanza media.",
+      "Taller gratuito y presencial de robótica acuática para adolescentes de enseñanza media.",
     images: ["/hero-rov.svg"],
     type: "website",
   },

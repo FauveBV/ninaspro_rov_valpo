@@ -2,7 +2,17 @@
 import Logo from "@/components/Logo";
 import Bubbles from "@/components/Bubbles";
 import ThemeToggle from "@/components/ThemeToggle";
-import { site, socials, logros, contenidos, metodologia } from "@/lib/course";
+import {
+  site,
+  socials,
+  logros,
+  contenidos,
+  metodologia,
+  competenciaIntro,
+  tareasRov,
+  competencias,
+  herramientas,
+} from "@/lib/course";
 import { socialPaths } from "@/lib/icons";
 
 export default function Page() {
@@ -60,7 +70,7 @@ export default function Page() {
               <h1 id="hero-title" className="mt-5 text-4xl font-bold leading-tight md:text-5xl">
                 Sumérgete en la
                 <br />
-                <span className="text-rose-100">robótica submarina</span>
+                <span className="text-rose-100">robótica acuática</span>
               </h1>
               <p className="mt-5 max-w-md text-lg text-ondark/85">
                 Construye y programa tu propio ROV y enfréntate a desafíos inspirados en la competencia
@@ -101,7 +111,7 @@ export default function Page() {
               <div className="animate-floaty overflow-hidden rounded-xl2 shadow-2xl ring-1 ring-overlay/20">
                 <img
                   src="/hero-rov-color.png"
-                  alt="Ilustración de robots submarinos ROV navegando entre aros bajo el agua, junto a una estación submarina y arrecifes de coral."
+                  alt="Ilustración de robots acuáticos ROV navegando entre aros bajo el agua, junto a una estación acuática y arrecifes de coral."
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -121,7 +131,7 @@ export default function Page() {
               <p>
                 La robótica tiene cada vez más protagonismo en desafíos científicos, industriales y medioambientales.
                 En este taller, niñas y adolescentes se acercan al desarrollo de{" "}
-                <strong className="font-medium text-body">sistemas robóticos submarinos</strong> a través de una
+                <strong className="font-medium text-body">sistemas robóticos acuáticos</strong> a través de una
                 experiencia práctica y progresiva: exploran el movimiento, el control y la percepción robótica en
                 entornos simulados, y desarrollan habilidades técnicas y creativas.
               </p>
@@ -135,7 +145,7 @@ export default function Page() {
                 >
                   MATE ROV Competition
                 </a>
-                , donde los equipos diseñan y programan vehículos submarinos capaces de navegar, percibir su entorno
+                , donde los equipos diseñan y programan vehículos acuáticos capaces de navegar, percibir su entorno
                 acuático y ejecutar misiones. Partimos desde la simulación y avanzamos hasta construir y probar un ROV
                 físico.
               </p>
@@ -150,6 +160,38 @@ export default function Page() {
                 ))}
               </ul>
             </aside>
+          </div>
+        </section>
+
+        {/* COMPETENCIAS ROV */}
+        <section id="competencias" className="mx-auto max-w-6xl px-5 py-20 md:py-24" aria-labelledby="comp-title">
+          <p className="text-sm font-medium uppercase tracking-wide text-rose">Competencias</p>
+          <h2 id="comp-title" className="mt-2 text-3xl font-bold md:text-4xl">¿Qué son las competencias ROV?</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted/80">{competenciaIntro}</p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {competencias.map((c) => (
+              <article key={c.nombre} className="rounded-xl2 border border-line p-6 md:p-7">
+                <p className="text-xs font-medium uppercase tracking-wide text-link">{c.rol}</p>
+                <h3 className="mt-1 text-xl font-medium text-body">{c.nombre}</h3>
+                <p className="mt-2 leading-relaxed text-muted/80">{c.desc}</p>
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex items-center gap-1 text-sm text-link transition hover:text-rose"
+                >
+                  Ver más →
+                </a>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 rounded-xl2 bg-surface2 p-6">
+            <p className="text-sm font-medium text-body">Tareas tipo que se entrenan en el curso</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {tareasRov.map((t) => (
+                <li key={t} className="rounded-full bg-page px-3 py-1 text-sm text-muted/80">{t}</li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -191,6 +233,36 @@ export default function Page() {
                 <p className="text-muted/70">{m.texto}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* HERRAMIENTAS */}
+        <section id="herramientas" className="border-y border-line bg-surface py-20 md:py-24" aria-labelledby="tools-title">
+          <div className="mx-auto max-w-6xl px-5">
+            <p className="text-sm font-medium uppercase tracking-wide text-rose">Herramientas</p>
+            <h2 id="tools-title" className="mt-2 text-3xl font-bold md:text-4xl">Herramientas que vas a usar</h2>
+            <p className="mt-3 max-w-2xl text-lg text-muted/70">
+              Todo libre y accesible. Si no las conoces, las aprendes con nosotras durante el curso.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {herramientas.map((h) => (
+                <a
+                  key={h.nombre}
+                  href={h.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex items-center gap-4 rounded-xl2 border border-line p-5 transition hover:border-rose/50"
+                >
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-surface2 text-sm font-bold text-violet">
+                    {h.sigla}
+                  </span>
+                  <span>
+                    <span className="block font-medium text-body">{h.nombre}</span>
+                    <span className="block text-sm text-muted/70">{h.rol}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -330,7 +402,7 @@ export default function Page() {
             <div>
               <Logo variant="white" className="h-8 w-auto" />
               <p className="mt-3 max-w-sm text-ondark/70">
-                Robótica submarina para que más niñas y adolescentes se proyecten en áreas STEM.
+                Robótica acuática para que más niñas y adolescentes se proyecten en áreas STEM.
               </p>
             </div>
             <nav className="flex items-center gap-2" aria-label="Redes sociales">

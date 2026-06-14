@@ -31,7 +31,7 @@ Niñas Pro es una organización chilena que empodera a niñas y adolescentes a t
 
 ## Discovery
 
-Punto de partida: un programa de curso detallado (objetivos, perfil de participantes, 10 sesiones, referencia a MATE ROV) y dos piezas gráficas de marca (una ilustración submarina con ROVs y un flyer). De ahí se extrajo:
+Punto de partida: un programa de curso detallado (objetivos, perfil de participantes, 10 sesiones, referencia a MATE ROV) y dos piezas gráficas de marca (una ilustración acuática con ROVs y un flyer). De ahí se extrajo:
 
 - **Contenido real** del taller (no placeholders): fundamentos de robótica, movimiento y estabilidad, navegación autónoma, percepción visual con OpenCV, construcción de hardware y misión final tipo competencia.
 - **Identidad visual base:** paleta morado/magenta/azul de las piezas, que la clienta pidió suavizar hacia el rosa, manteniéndola accesible.
@@ -82,7 +82,7 @@ Para soportar dark/light sin color "a mano", los colores de superficie y texto s
 
 ### Ilustración
 
-La ilustración submarina original se **recoloreó** hacia el degradado morado→magenta del flyer, conservando los multitonos (robots magenta, red azul, acentos turquesa) en lugar de un duotono plano, y ajustando brillo/saturación para igualar la luminosidad de la pieza de marca.
+La ilustración acuática original se **recoloreó** hacia el degradado morado→magenta del flyer, conservando los multitonos (robots magenta, red azul, acentos turquesa) en lugar de un duotono plano, y ajustando brillo/saturación para igualar la luminosidad de la pieza de marca.
 
 ![Ilustración recoloreada](img/ilustracion-recolor.png)
 
@@ -93,7 +93,7 @@ La ilustración submarina original se **recoloreó** hacia el degradado morado�
 - **Next.js (App Router) + TypeScript + Tailwind**, pensado para Vercel.
 - **Contenido separado del markup** en `lib/course.ts` (textos, fechas, enlaces) y `lib/icons.ts` (iconos de redes inline desde Simple Icons). Principio: semántico, escalable y replicable.
 - **Componentes portables:** `ThemeToggle`, `Bubbles`, `Logo`.
-- **Animación submarina sutil:** burbujas ascendentes + flotación del hero, siempre respetando `prefers-reduced-motion`.
+- **Animación acuática sutil:** burbujas ascendentes + flotación del hero, siempre respetando `prefers-reduced-motion`.
 - **Logo:** generado a partir de un PNG blanco sobre negro → versión transparente blanca (fondos oscuros) y violeta (barra clara), con cambio automático según el tema.
 
 ![Contenidos del taller](img/contenidos-light.png)

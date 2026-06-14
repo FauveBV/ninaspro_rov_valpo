@@ -34,11 +34,49 @@ export const socials = [
   { name: "Sitio web", url: "https://ninaspro.cl/#/" },
 ];
 
+// Qué son las competencias ROV
+export const competenciaIntro =
+  "Un ROV (Remotely Operated Vehicle) es un robot acuático operado a distancia. En las competencias internacionales, equipos de estudiantes diseñan, construyen y pilotean estos robots para resolver misiones inspiradas en problemas reales del océano, la industria y el medioambiente.";
+
+export const tareasRov = [
+  "Inspección de estructuras y tuberías acuáticas",
+  "Operación de válvulas y manipulación de objetos",
+  "Toma de muestras y monitoreo de ecosistemas",
+  "Navegación entre obstáculos y seguimiento visual",
+];
+
+export const competencias = [
+  {
+    nombre: "MATE ROV Competition",
+    rol: "ROV teleoperado · referencia del curso",
+    desc:
+      "Competencia internacional anual donde los equipos actúan como “empresas”: diseñan y construyen un ROV teleoperado y compiten en misiones cronometradas inspiradas en la industria oceánica. Además presentan documentación técnica y un pitch ante jueces profesionales. Tiene clases por nivel (de SCOUT a EXPLORER), desde principiante hasta avanzado.",
+    url: "https://materovcompetition.org/",
+  },
+  {
+    nombre: "RoboSub",
+    rol: "Vehículo autónomo · el siguiente nivel",
+    desc:
+      "Competencia internacional de vehículos acuáticos autónomos (AUV): a diferencia del ROV teleoperado, el robot navega y cumple las tareas por sí solo, apoyándose en visión por computador y sensores. Es el horizonte al que apunta esta línea formativa.",
+    url: "https://robosub.org/",
+  },
+];
+
+// Herramientas (stack) — todo libre y accesible
+export const herramientas = [
+  { sigla: "PY", nombre: "Python 3.8+", rol: "Lenguaje base", url: "https://docs.python.org/3/" },
+  { sigla: "UUV", nombre: "UUV Simulator", rol: "Simulación acuática", url: "https://uuvsimulator.github.io/" },
+  { sigla: "CV", nombre: "OpenCV", rol: "Visión por computador", url: "https://docs.opencv.org/" },
+  { sigla: "ROS", nombre: "ROS2", rol: "Sistema robótico", url: "https://docs.ros.org/en/humble/index.html" },
+  { sigla: "TK", nombre: "Tinkercad", rol: "Circuitos y prototipos", url: "https://www.tinkercad.com/" },
+  { sigla: "VS", nombre: "VSCode", rol: "Entorno de desarrollo", url: "https://code.visualstudio.com/" },
+];
+
 export const logros = [
   "Programar el movimiento 3D de un ROV.",
   "Hacer que “vea” con visión por computador.",
   "Navegar y seguir objetivos bajo el agua.",
-  "Ensamblar tu propio robot submarino.",
+  "Ensamblar tu propio robot acuático.",
   "Resolver una misión final tipo competencia.",
 ];
 

@@ -65,7 +65,7 @@ export const competencias = [
 // Herramientas (stack) — todo libre y accesible
 export const herramientas = [
   { sigla: "PY", nombre: "Python 3.8+", rol: "Lenguaje base", url: "https://docs.python.org/3/" },
-  { sigla: "UUV", nombre: "UUV Simulator", rol: "Simulación acuática", url: "https://uuvsimulator.github.io/" },
+  { sigla: "DAVE", nombre: "DAVE (ROS2)", rol: "Simulador acuático", url: "https://dave-ros2.notion.site/" },
   { sigla: "CV", nombre: "OpenCV", rol: "Visión por computador", url: "https://docs.opencv.org/" },
   { sigla: "ROS", nombre: "ROS2", rol: "Sistema robótico", url: "https://docs.ros.org/en/humble/index.html" },
   { sigla: "TK", nombre: "Tinkercad", rol: "Circuitos y prototipos", url: "https://www.tinkercad.com/" },

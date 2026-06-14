@@ -11,7 +11,7 @@ export const site = {
   valor: "Gratuito",
   inicioTaller: "8 de agosto, 2026",
   diasHorario: "Sábados, 10:00 a 13:00 hrs",
-  lugar: "Universidad Santa María, sede Valparaíso",
+  lugar: "Casa Central UTFSM, Valparaíso",
   inicioInscripciones: "27 de junio",
   cierreInscripciones: "18 de julio",
   // Enlaces — reemplazar "#" por la URL real del formulario

@@ -81,6 +81,14 @@ export default function Page() {
                   Conoce el taller
                 </a>
               </div>
+              <a
+                href={site.links.sitio}
+                target="_blank"
+                rel="noopener"
+                className="mt-5 inline-flex items-center gap-1 text-sm text-ondark/80 underline decoration-rose decoration-2 underline-offset-4 transition hover:text-ondark"
+              >
+                Un programa de Niñas Pro — ninaspro.cl →
+              </a>
               <dl className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
                 <div><dt className="text-ondark/60">Modalidad</dt><dd className="font-medium">{site.modalidad}</dd></div>
                 <div><dt className="text-ondark/60">Duración</dt><dd className="font-medium">{site.duracion}</dd></div>
@@ -268,8 +276,13 @@ export default function Page() {
                 Niñas Pro es una organización chilena que{" "}
                 <strong className="font-medium text-body">empodera a niñas y adolescentes a través de la enseñanza de
                 la programación</strong>{" "}
-                e inspira vocaciones científicas y tecnológicas. Trabajamos para eliminar las barreras de acceso a la
-                tecnología, con cursos y actividades en formato presencial y virtual.
+                e inspira vocaciones científicas y tecnológicas. Trabaja para eliminar las barreras de acceso a la
+                tecnología mediante cursos y actividades, en alianza con universidades y comunidades educativas.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-muted/80">
+                Esta versión del taller se realiza en la{" "}
+                <strong className="font-medium text-body">Casa Central de la Universidad Técnica Federico Santa
+                María</strong>, en Valparaíso.
               </p>
               <blockquote className="mt-6 border-l-4 border-rose pl-5 italic text-muted/80">
                 Queremos que las niñas tengan la oportunidad de aprender computación y se vuelvan{" "}
@@ -277,16 +290,25 @@ export default function Page() {
                 tecnología.
               </blockquote>
             </div>
-            {/* SLOT FOTO GRUPAL — reemplaza por una foto real de participantes/mentoras.
-                Ver specs de la imagen en README.md. Sugerido: /ninaspro-grupo.jpg */}
             <figure className="overflow-hidden rounded-xl2 ring-1 ring-line">
-              <div className="flex aspect-[4/3] w-full flex-col items-center justify-center bg-surface2 text-center text-muted/55">
-                <span className="text-sm font-medium uppercase tracking-wide text-violet">Foto grupal</span>
-                <span className="mt-1 max-w-[16rem] px-4 text-sm">
-                  Reemplaza por una imagen real de niñas y mentoras (ver specs en el README).
-                </span>
-              </div>
-              <figcaption className="sr-only">Participantes y mentoras de Niñas Pro.</figcaption>
+              <iframe
+                title="Ubicación del taller: Casa Central de la Universidad Técnica Federico Santa María, Valparaíso"
+                src="https://www.google.com/maps?q=Universidad%20T%C3%A9cnica%20Federico%20Santa%20Mar%C3%ADa%20Casa%20Central%20Valpara%C3%ADso&output=embed"
+                className="map-tint h-[300px] w-full border-0 md:h-[360px]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <figcaption className="flex items-center justify-between gap-3 bg-surface2 px-4 py-3 text-sm">
+                <span className="font-medium text-body">Casa Central UTFSM · Valparaíso</span>
+                <a
+                  href="https://maps.app.goo.gl/fUVzvX2cdGWmv18X8"
+                  target="_blank"
+                  rel="noopener"
+                  className="whitespace-nowrap text-link transition hover:text-rose"
+                >
+                  Cómo llegar →
+                </a>
+              </figcaption>
             </figure>
           </div>
         </section>

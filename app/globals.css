@@ -32,6 +32,10 @@
 .dark .logo-dark { display: block; }
 .dark .logo-light { display: none; }
 
+/* Mapa de Google tintado hacia la paleta morado/magenta */
+.map-tint { filter: saturate(0.9) hue-rotate(200deg) contrast(1.02); }
+.dark .map-tint { filter: invert(0.92) hue-rotate(185deg) saturate(0.85) brightness(0.95); }
+
 html {
   scroll-behavior: smooth;
 }
